@@ -2,7 +2,18 @@ var displayName = "Jess's standing desk";
 var inventoryType = "furniture";
 var trackingNumber = "FD123455";
 var createDate = new Date();
-var originalCost = 425;
+var originalCost;
+if (typeof originalCost === 'number') {
+    var cost = originalCost;
+}
+else {
+    var x = originalCost;
+}
+var InventoryItemType;
+(function (InventoryItemType) {
+    InventoryItemType["Computer"] = "computer";
+    InventoryItemType["Furniture"] = "furniture";
+})(InventoryItemType || (InventoryItemType = {}));
 function getInventoryItem(trackingNumber) {
     return null;
 }
