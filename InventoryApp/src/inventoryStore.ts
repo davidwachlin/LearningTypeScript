@@ -163,7 +163,7 @@ class InventoryStore {
       getFromStorage("Inventory")
     ]).then(([categories, items]) => {
       this._categories = categories;
-      this._items = items;
+      this._items = items; 
     });
   }
 
