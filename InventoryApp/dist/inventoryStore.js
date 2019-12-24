@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var InventoryStore = /** @class */ (function () {
     function InventoryStore() {
         this._categories = [];
@@ -152,9 +150,10 @@ var InventoryStore = /** @class */ (function () {
     InventoryStore.prototype._save = function () {
         return saveToStorage("Inventory", this._items);
     };
+    //#endregion
+    // Create a "static" singleton instance for the entire application to use
+    InventoryStore.instance = new InventoryStore();
     return InventoryStore;
 }());
-// Create a "static" singleton instance for the entire application to use
-InventoryStore.instance = new InventoryStore();
-// Expose the singleton as the default export
-exports.default = InventoryStore.instance;
+// Expose the singleton in its own variable
+var inventoryStore = InventoryStore.instance;
