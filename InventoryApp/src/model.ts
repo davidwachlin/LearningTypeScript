@@ -26,4 +26,9 @@ let inventoryItem = getInventoryItem(trackingNumber);
 
 inventoryItem.createDate = new Date();
 
-saveInventoryItem(inventoryItem);
+saveInventoryItem({
+    displayName: 'Macbook Pro 15 Retina',
+    inventoryType: "computer",
+    trackingNumber: "MBP123456",
+    createDate: new Date(),
+});
