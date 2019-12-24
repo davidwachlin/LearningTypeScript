@@ -1,7 +1,15 @@
+interface Category {
+    name: string,
+    displayName: string,
+    subCategories: { name: string, displayName: string }[]
+  }
+
 class InventoryStore {
-  _categories;
-  _items;
-  _isInitialized;
+
+  
+  _categories: Category[] = [];
+  _items: InventoryItem[] = [];
+  _isInitialized: Promise<boolean>;
 
   get categories() {
     return this._categories;
@@ -18,9 +26,6 @@ class InventoryStore {
   }
 
   constructor() {
-    // define and initialize properties (which happen to be "private")
-    this._categories = [];
-    this._items = [];
 
     // load initial set of data
     this._isInitialized = this._load();

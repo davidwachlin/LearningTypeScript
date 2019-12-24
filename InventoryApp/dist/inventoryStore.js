@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var InventoryStore = /** @class */ (function () {
     function InventoryStore() {
-        // define and initialize properties (which happen to be "private")
         this._categories = [];
         this._items = [];
         // load initial set of data
